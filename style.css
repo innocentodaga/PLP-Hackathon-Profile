@@ -1,0 +1,563 @@
+/* CSS for animated text skeleton loader */
+
+.skeleton-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fef0d3;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: hideLoader 0.5s forwards;
+    animation-delay: 3.5s;
+    /* Delay the fade out until the typing animation is done */
+}
+
+.skeleton-text-loader {
+    font-family: sans-serif;
+    font-size: 62px;
+    font-weight: bold;
+    color: #81522e;
+    overflow: hidden;
+    /* Hide text that's not "typed" yet */
+    border-right: .15em solid #81522e;
+    /* The blinking cursor */
+    white-space: nowrap;
+    /* Prevent text from wrapping to new line */
+    animation: typing 2.5s steps(10, end) forwards, /* Typing animation */
+    blink-caret .75s step-end infinite;
+    /* Blinking cursor animation */
+}
+
+
+/* The typing effect */
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 15ch
+    }
+    /* 15 characters in "Innocent Odaga" */
+}
+
+
+/* The typewriter cursor effect */
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent
+    }
+    50% {
+        border-color: #81522e;
+    }
+}
+
+
+/* The fade out effect for the entire loader */
+
+@keyframes hideLoader {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+/* Original CSS from the user's template and additions for other sections */
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --seal-brown: #582f0eff;
+    --russet: #7f4f24ff;
+    --raw-umber: #936639ff;
+    --lion: #a68a64ff;
+    --khaki: #b6ad90ff;
+    --sage: #c2c5aaff;
+    --sage-2: #a4ac86ff;
+    --reseda-green: #656d4aff;
+    --ebony: #414833ff;
+    --black-olive: #333d29ff;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    background-color: #fef0d3;
+    padding: 0 12%;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #81522e;
+    text-decoration: none;
+}
+
+.menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+}
+
+.menu a {
+    color: #333;
+    transition: 0.5s;
+}
+
+.menu a:hover {
+    color: #81522e;
+}
+
+.btn {
+    padding: 8px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #81522e;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-color: #af6d3b;
+}
+
+main {
+    min-height: 100vh;
+}
+
+
+/* Section styling */
+
+section {
+    padding: 100px 0;
+    min-height: 100vh;
+}
+
+section h2 {
+    font-size: 48px;
+    color: #81522e;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+/* Home section - Modified for a developer's portfolio */
+
+#home {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 100px);
+    /* Adjust height to fill the screen */
+    margin: 20px 0;
+}
+
+#home h4 {
+    font-family: sans-serif;
+    font-size: 24px;
+    color: #81522e;
+    margin-bottom: 10px;
+}
+
+#home h1 {
+    font-size: 72px;
+    color: #81522e;
+    line-height: 72px;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 18px;
+    max-width: 600px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+
+/* About section - UPDATED */
+
+#about-me .about-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+
+/* New styling for the image container */
+
+#about-me .about-image {
+    flex: 1;
+    text-align: center;
+    background-color: #7f4f24;
+    /* Dark brown background for the image container only */
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#about-me .about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+#about-me .about-content {
+    flex: 2;
+}
+
+#about-me .about-content h3 {
+    font-size: 28px;
+    color: #81522e;
+    margin-bottom: 15px;
+}
+
+#about-me .about-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+/* Skills Section */
+
+#skills .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#skills .skill-group {
+    background-color: #f1dbc2;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px;
+    /* Flex-grow, flex-shrink, basis */
+}
+
+#skills .skill-group h3 {
+    font-size: 20px;
+    color: #81522e;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #a68a64;
+    padding-bottom: 5px;
+}
+
+#skills .skill-group ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#skills .skill-group li {
+    padding: 5px 0;
+    color: #555;
+}
+
+
+/* Education section */
+
+#education .education-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+#education .education-card {
+    background-color: #f1dbc2;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+#education .education-card:hover {
+    transform: translateY(-10px);
+}
+
+#education .education-card h3 {
+    font-size: 22px;
+    color: #81522e;
+    margin-bottom: 10px;
+}
+
+#education .education-card h4 {
+    font-size: 16px;
+    color: #555;
+    font-style: italic;
+}
+
+
+/* Experience Section */
+
+#experience .experience-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+#experience .experience-block {
+    background-color: #f1dbc2;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+#experience .experience-block:hover {
+    transform: translateY(-10px);
+}
+
+#experience .experience-block h3 {
+    font-size: 24px;
+    color: #81522e;
+    margin-bottom: 15px;
+}
+
+#experience .job-entry,
+#experience .leadership-entry {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d4d4d4;
+    padding-bottom: 20px;
+}
+
+#experience .job-entry:last-child,
+#experience .leadership-entry:last-child {
+    border-bottom: none;
+}
+
+#experience .job-entry h4,
+#experience .leadership-entry h4 {
+    font-size: 18px;
+    color: #81522e;
+    margin: 0;
+}
+
+#experience .job-entry p,
+#experience .leadership-entry p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0 10px 0;
+    font-style: italic;
+}
+
+#experience .job-entry ul,
+#experience .leadership-entry ul {
+    padding-left: 20px;
+    color: #333;
+}
+
+#experience .job-entry li,
+#experience .leadership-entry li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+
+/* Projects Section */
+
+#projects .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+#projects .project-card {
+    background-color: #f1dbc2;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+#projects .project-card:hover {
+    transform: translateY(-10px);
+}
+
+#projects .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+#projects .project-card h3 {
+    font-size: 22px;
+    color: #81522e;
+    margin-bottom: 10px;
+}
+
+#projects .project-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* Hire Me section (new contact form) */
+
+#contact-form {
+    text-align: center;
+}
+
+#contact-form h2 {
+    margin-bottom: 20px;
+}
+
+.email-compose-form {
+    background-color: #f1dbc2;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.compose-header {
+    background-color: #81522e;
+    color: #fff;
+    padding: 15px 25px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.compose-body {
+    padding: 25px;
+}
+
+.compose-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d4d4d4;
+    padding: 10px 0;
+}
+
+.compose-row label {
+    width: 80px;
+    font-weight: bold;
+    color: #555;
+}
+
+.compose-row input,
+.compose-row textarea {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 5px;
+}
+
+.compose-row textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.compose-footer {
+    padding: 15px 25px;
+    text-align: right;
+}
+
+.send-btn {
+    background-color: #81522e;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.send-btn:hover {
+    background-color: #af6d3b;
+}
+
+.social-links-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+
+/* Updated styling for Material Icons */
+
+.social-links-images a i {
+    font-size: 40px;
+    color: #81522e;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-links-images a:hover i {
+    transform: scale(1.1);
+    color: #af6d3b;
+}
+
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+    body {
+        padding: 0 5%;
+    }
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #home h1 {
+        font-size: 48px;
+        line-height: 52px;
+    }
+    #about-me .about-container {
+        flex-direction: column;
+    }
+    .images {
+        flex-wrap: wrap;
+    }
+    .images img {
+        width: 45%;
+        height: 250px;
+    }
+    .images img:hover {
+        width: 50%;
+    }
+}
